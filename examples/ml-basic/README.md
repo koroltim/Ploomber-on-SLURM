@@ -3,7 +3,7 @@
 # Basic ML project
 
 <!-- start description -->
-THis pipeline downloads data, cleans it, generates features and trains a model.
+This pipeline downloads data, cleans it, generates features and trains a model.
 <!-- end description -->
 
 ## Description
