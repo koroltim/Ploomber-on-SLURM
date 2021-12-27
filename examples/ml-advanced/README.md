@@ -1,5 +1,5 @@
 <!-- start header -->
-To run this example locally, [install Ploomber](https://ploomber.readthedocs.io/en/latest/get-started/install.html) and execute: `ploomber examples -n templates/ml-advanced`
+To run this example locally execute: `ploomber examples -n templates/ml-advanced`
 
 <!-- end header -->
 
