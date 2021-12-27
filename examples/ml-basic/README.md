@@ -55,12 +55,12 @@ Install ploomber in the base environment so we can download an example and submi
 Download sample pipeline to ml-basic/
 
     ploomber examples -n templates/ml-basic -o ml-basic
-    cd example
+    cd ml-basic
 
 Create the project's virtual env
  
-    python -m venv myproj
-    source myproj/bin/activate
+    python -m venv ml-basic-env
+    source ml-basic-env/bin/activate
     pip install -r requirements.txt
 
 Copy submit.py (see source code below) to example/submit.py, then submit to the cluster with:
