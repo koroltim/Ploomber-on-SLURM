@@ -78,6 +78,7 @@ If all works, you'll see an ml-basic/output folder with:
 Submit.py:
 
 
+   
     """
     Script to submit tasks in a Ploomber pipeline as SLURM jobs.
     """
@@ -94,7 +95,7 @@ Submit.py:
     #SBATCH --output=result.out
     #
 
-    source myproj/bin/activate
+    source ml-basiv-env/bin/activate
     srun ploomber task {{name}}
     """)
 
