@@ -67,7 +67,7 @@ Copy submit.py (see source code below) to example/submit.py, then submit to the 
   
     python submit.py
    
-If all works, you'll see an example/output folder with:
+If all works, you'll see an ml-basic/output folder with:
 
     features.parquet
     get.parquet
@@ -97,7 +97,7 @@ Submit.py:
     #SBATCH -c 1 
     #SBATCH --mem=1g
 
-    # source myproj/bin/activate -- slurm usually passes through env variables, 
+    # source ml-basic-env/bin/activate -- slurm usually passes through env variables, 
     ploomber task {{name}}
     """)
 
