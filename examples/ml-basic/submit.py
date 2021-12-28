@@ -15,7 +15,7 @@ job_sh = Template("""\
 #SBATCH --output=result.out
 #
 
-source ml-basiv-env/bin/activate
+source ml-basic-env/bin/activate
 srun ploomber task {{name}}
 """)
 
