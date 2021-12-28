@@ -1,3 +1,5 @@
+
+Currently doesn't work on SLURM,need to rewrite the submission script
 <!-- start header -->
 To run this example locally execute: `ploomber examples -n templates/ml-advanced`
 
