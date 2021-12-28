@@ -1,15 +1,3 @@
-<!-- start header -->
-To run this example locally, [install Ploomber](https://ploomber.readthedocs.io/en/latest/get-started/install.html) and execute: `ploomber examples -n templates/ml-intermediate`
-
-To start a free, hosted JupyterLab: [![binder-logo](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ploomber/binder-env/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fploomber%252Fprojects%26urlpath%3Dlab%252Ftree%252Fprojects%252Ftemplates/ml-intermediate%252FREADME.ipynb%26branch%3Dmaster)
-
-Found an issue? [Let us know.](https://github.com/ploomber/projects/issues/new?title=templates/ml-intermediate%20issue)
-
-Have questions? [Ask us anything on Slack.](https://ploomber.io/community/)
-
-For a notebook version (with outputs) of this file, [click here](https://github.com/ploomber/projects/blob/master/templates/ml-intermediate/README.ipynb)
-<!-- end header -->
-
 
 
 # Intermediate ML project
@@ -66,18 +54,42 @@ def no_missing_values(product):
 ```
 <!-- #endmd -->
 
-## Training a model
+# Running the example
+Start conda
+ 
+    eval "$($HOME/miniconda/bin/conda shell.bash hook)"
 
-To train a model, run:
+Install ploomber in the base environment so we can download an example and submit the jobs
 
-```sh
-ploomber build
-```
+    pip install ploomber
 
-## Serving predictions
+Download sample pipeline to ml-basic/
 
-Once the model trains, run the serving pipeline with:
+    ploomber examples -n templates/ml-intermediate -o ml-intermediate
+    cd ml-intermediate
 
-```sh
-ploomber build --entry-point pipeline.serve.yaml
-```
+Create the project's virtual env
+ 
+    python -m venv ml-intermediate-env
+    source ml-intermediate-env/bin/activate
+    pip install -r requirements.txt
+
+To train the model copy train.py (see source code in files) to ml-intermediate/train.py, then submit it to the cluster with:
+  
+    python train.py
+
+
+To serve the predictions of the model is trained copy serve.py(see source code in files) to ml-intermediate/serve.py, then submit it to the cluster with:
+
+    python serve.py
+    
+    
+If everything is done correctly, inside ml-intermediate/output/train/sample=False/ directory you should have these files:
+
+      get.parquet  
+      join.parquet  
+      model.pickle  
+      nb.html  
+      petal_area.parquet  
+      sepal_area.parquet
+
